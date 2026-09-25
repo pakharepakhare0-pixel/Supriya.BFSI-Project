@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Loan Eligibility Checker | Smart BFSI Analytics & Advisory</title>
+  <meta name="description" content="AI-powered BFSI personal finance platform for estimated loan eligibility, credit score analysis, EMI calculation, and personalized financial tips.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Background Glow Orbs for Glassmorphism -->
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#home" class="brand-logo" aria-label="AI Loan Eligibility Checker Home">
+        <img src="assets/logo.svg" alt="BFSI AI Logo" class="brand-icon" width="38" height="38">
+        <div class="brand-text">
+          <span class="brand-title">FinEdge AI</span>
+          <span class="brand-subtitle">Loan Eligibility Checker</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#loan-eligibility" class="nav-link">Loan Eligibility</a></li>
+          <li><a href="#credit-score" class="nav-link">Credit Score</a></li>
+          <li><a href="#emi-calculator" class="nav-link">EMI Calculator</a></li>
+          <li><a href="#ai-tips" class="nav-link">AI Financial Tips</a></li>
+        </ul>
+      </nav>
+
+      <!-- System Status & Action -->
+      <div class="header-actions">
+        <div class="status-indicator" id="system-status" title="System connectivity status">
+          <span class="status-dot"></span>
+          <span class="status-text">Backend Ready</span>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline view-saved-btn" id="view-records-btn">
+          📋 Saved Demos
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#loan-eligibility" class="mobile-nav-link">Loan Eligibility</a></li>
+        <li><a href="#credit-score" class="mobile-nav-link">Credit Score</a></li>
+        <li><a href="#emi-calculator" class="mobile-nav-link">EMI Calculator</a></li>
+        <li><a href="#ai-tips" class="mobile-nav-link">AI Financial Tips</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Educational Project Disclaimer Banner -->
+  <div class="global-disclaimer-banner" role="alert">
+    <div class="container banner-inner">
+      <span class="banner-badge">Educational Project</span>
+      <p class="banner-text">
+        <strong>Notice:</strong> This application is for educational and project demonstration purposes. All calculations are estimates and do not represent formal lending decisions or financial advice. Zero sensitive data (passwords, bank accounts, card numbers, OTPs, or government IDs) is requested.
+      </p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ============================================================== -->
+    <!-- HERO SECTION -->
+    <!-- ============================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill hero-badge">
+            <span class="pill-spark">✨</span> Powered by BFSI Rules Engine & Claude AI
+          </div>
+          <h1 class="hero-title">
+            Make Smarter Financial Decisions with <span class="gradient-text">AI Intelligence</span>
+          </h1>
+          <p class="hero-subtitle">
+            Check your estimated loan eligibility, understand your credit profile, calculate EMIs with interactive charts, and receive personalized financial insights powered by Claude.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#loan-eligibility" class="btn btn-primary btn-lg pulse-glow">
+              <span class="btn-icon">🏦</span> Check Loan Eligibility
+            </a>
+            <a href="#emi-calculator" class="btn btn-glass btn-lg">
+              <span class="btn-icon">🧮</span> Calculate EMI
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-pill">
+              <span class="stat-icon">📊</span>
+              <div>
+                <strong class="stat-val">FOIR & DTI</strong>
+                <span class="stat-lbl">Rule-Based Logic</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-icon">🎯</span>
+              <div>
+                <strong class="stat-val">300 – 900</strong>
+                <span class="stat-lbl">Credit Score Analyzer</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-icon">🔒</span>
+              <div>
+                <strong class="stat-val">100% Safe</strong>
+                <span class="stat-lbl">No Sensitive Data Asked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Hero Visual Graphic -->
+        <div class="hero-visual-wrapper">
+          <div class="fintech-card hero-glass-card">
+            <div class="card-glow-header">
+              <div class="card-chip"></div>
+              <span class="card-brand-badge">BFSI DEMO PROFILE</span>
+            </div>
+            <div class="card-balance-block">
+              <span class="balance-label">Estimated Loan Eligibility Ceiling</span>
+              <div class="balance-amount-row">
+                <span class="currency-symbol">₹</span>
+                <span class="balance-counter" id="hero-loan-display">18,50,000</span>
+              </div>
+            </div>
+            <div class="card-telemetry-grid">
+              <div class="telemetry-item">
+                <span class="telemetry-label">FOIR Capacity</span>
+                <div class="progress-bar-small">
+                  <div class="progress-bar-fill fill-green" style="width: 72%;"></div>
+                </div>
+                <span class="telemetry-val">45% Max Limit</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Credit Profile</span>
+                <div class="progress-bar-small">
+                  <div class="progress-bar-fill fill-blue" style="width: 85%;"></div>
+                </div>
+                <span class="telemetry-val">760 (Very Good)</span>
+              </div>
+            </div>
+            <div class="card-footer-metrics">
+              <div class="mini-metric">
+                <span class="metric-title">Est. Monthly EMI</span>
+                <strong class="metric-num">₹37,650</strong>
+              </div>
+              <div class="mini-metric">
+                <span class="metric-title">Tenure</span>
+                <strong class="metric-num">5 Years</strong>
+              </div>
+              <div class="mini-metric">
+                <span class="metric-title">Interest Rate</span>
+                <strong class="metric-num">8.75% p.a.</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-badge badge-top-left float-anim">
+            <span class="floating-badge-icon">⚡</span>
+            <span>Real-time Calculation</span>
+          </div>
+          <div class="floating-badge badge-bottom-right float-anim-reverse">
+            <span class="floating-badge-icon">🤖</span>
+            <span>Claude AI Tips Integration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 4 DASHBOARD FEATURE CARDS -->
+    <!-- ============================================================== -->
+    <section class="section feature-cards-section" id="tools">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive BFSI Toolkit</span>
+          <h2 class="section-title">Four Essential Financial Tools in One Dashboard</h2>
+          <p class="section-desc">Explore institutional-grade personal finance calculators, risk analytics, and AI advisory modules designed for transparent financial planning.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1: Loan Eligibility -->
+          <div class="feature-card glass-panel" data-tilt>
+            <div class="feature-icon-box icon-blue">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2L2 7h20L12 2z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Loan Eligibility</h3>
+            <p class="feature-card-desc">Estimate your potential loan eligibility using income, expenses, employment and credit information with transparent FOIR logic.</p>
+            <a href="#loan-eligibility" class="btn btn-outline btn-block feature-card-btn">
+              Check Eligibility <span class="arrow-icon">→</span>
+            </a>
+          </div>
+
+          <!-- Card 2: Credit Score Analyzer -->
+          <div class="feature-card glass-panel" data-tilt>
+            <div class="feature-icon-box icon-purple">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Credit Score Analyzer</h3>
+            <p class="feature-card-desc">Analyze your credit score from 300 to 900 and understand the five key educational factors that shape creditworthiness.</p>
+            <a href="#credit-score" class="btn btn-outline btn-block feature-card-btn">
+              Analyze Score <span class="arrow-icon">→</span>
+            </a>
+          </div>
+
+          <!-- Card 3: EMI Calculator -->
+          <div class="feature-card glass-panel" data-tilt>
+            <div class="feature-icon-box icon-cyan">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <line x1="8" y1="6" x2="16" y2="6"/>
+                <line x1="16" y1="14" x2="16" y2="18"/>
+                <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">EMI Calculator</h3>
+            <p class="feature-card-desc">Calculate your monthly EMI, total interest, and total repayment amount with dynamic visual breakdown charts and schedules.</p>
+            <a href="#emi-calculator" class="btn btn-outline btn-block feature-card-btn">
+              Calculate EMI <span class="arrow-icon">→</span>
+            </a>
+          </div>
+
+          <!-- Card 4: AI Financial Tips -->
+          <div class="feature-card glass-panel" data-tilt>
+            <div class="feature-icon-box icon-emerald">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">AI Financial Tips</h3>
+            <p class="feature-card-desc">Receive personalized, beginner-friendly financial guidance and debt strategies powered by Claude API with built-in fallback.</p>
+            <a href="#ai-tips" class="btn btn-outline btn-block feature-card-btn">
+              Get AI Tips <span class="arrow-icon">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TOOL 1: LOAN ELIGIBILITY CHECKER -->
+    <!-- ============================================================== -->
+    <section class="section tool-section" id="loan-eligibility">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tool 01</span>
+          <h2 class="section-title">Loan Eligibility Checker</h2>
+          <p class="section-desc">Enter your approximate financial details to evaluate your borrowing capacity using institutional FOIR (Fixed Obligation to Income Ratio) parameters.</p>
+        </div>
+
+        <div class="tool-layout-grid">
+          <!-- Multi-Field Form -->
+          <div class="glass-panel form-card">
+            <div class="form-header-bar">
+              <div class="form-header-info">
+                <h3 class="form-title">Applicant Financial Profile</h3>
+                <span class="form-subtitle">Safe educational evaluation (No sensitive documents required)</span>
+              </div>
+              <button type="button" class="btn btn-sm btn-accent" id="load-demo-data-btn" title="Fills form with fictional example data">
+                ✨ Try Demo Data
+              </button>
+            </div>
+
+            <form id="loan-eligibility-form" novalidate>
+              <div class="form-grid">
+                <!-- Full Name / Alias -->
+                <div class="form-group">
+                  <label for="applicant-name" class="form-label">
+                    Full Name / Alias <span class="required">*</span>
+                  </label>
+                  <input type="text" id="applicant-name" class="form-input" placeholder="e.g. Rahul Sharma" required maxlength="60">
+                  <span class="field-error" id="error-applicant-name"></span>
+                </div>
+
+                <!-- Age -->
+                <div class="form-group">
+                  <label for="applicant-age" class="form-label">
+                    Age (Years) <span class="required">*</span>
+                  </label>
+                  <input type="number" id="applicant-age" class="form-input" placeholder="e.g. 29" min="18" max="75" required>
+                  <span class="field-error" id="error-applicant-age"></span>
+                </div>
+
+                <!-- Monthly Income -->
+                <div class="form-group">
+                  <label for="monthly-income" class="form-label">
+                    Net Monthly Income (₹) <span class="required">*</span>
+                  </label>
+                  <div class="input-with-symbol">
+                    <span class="input-symbol">₹</span>
+                    <input type="number" id="monthly-income" class="form-input" placeholder="e.g. 85000" min="5000" max="10000000" required>
+                  </div>
+                  <span class="field-error" id="error-monthly-income"></span>
+                </div>
+
+                <!-- Monthly Expenses -->
+                <div class="form-group">
+                  <label for="monthly-expenses" class="form-label">
+                    Monthly Living Expenses (₹) <span class="required">*</span>
+                  </label>
+                  <div class="input-with-symbol">
+                    <span class="input-symbol">₹</span>
+                    <input type="number" id="monthly-expenses" class="form-input" placeholder="e.g. 25000" min="0" max="10000000" required>
+                  </div>
+                  <span class="field-error" id="error-monthly-expenses"></span>
+                </div>
+
+                <!-- Existing Monthly EMI -->
+                <div class="form-group">
+                  <label for="existing-emi" class="form-label">
+                    Existing Monthly EMIs (₹) <span class="required">*</span>
+                  </label>
+                  <div class="input-with-symbol">
+                    <span class="input-symbol">₹</span>
+                    <input type="number" id="existing-emi" class="form-input" placeholder="e.g. 8000" min="0" max="10000000" value="0" required>
+                  </div>
+                  <span class="field-hint">Enter 0 if you currently have no loans.</span>
+                  <span class="field-error" id="error-existing-emi"></span>
+                </div>
+
+                <!-- Employment Type -->
+                <div class="form-group">
+                  <label for="employment-type" class="form-label">
+                    Employment Type <span class="required">*</span>
+                  </label>
+                  <select id="employment-type" class="form-input" required>
+                    <option value="Salaried" selected>Salaried Professional</option>
+                    <option value="Self-employed">Self-Employed Professional</option>
+                    <option value="Business">Business Owner / Entrepreneur</option>
+                  </select>
+                  <span class="field-error" id="error-employment-type"></span>
+                </div>
+
+                <!-- Experience in Years -->
+                <div class="form-group">
+                  <label for="experience-years" class="form-label">
+                    Work Experience (Years) <span class="required">*</span>
+                  </label>
+                  <input type="number" id="experience-years" class="form-input" placeholder="e.g. 4" min="0" max="50" step="0.5" required>
+                  <span class="field-error" id="error-experience-years"></span>
+                </div>
+
+                <!-- Desired Loan Amount -->
+                <div class="form-group">
+                  <label for="desired-loan-amount" class="form-label">
+                    Desired Loan Amount (₹) <span class="required">*</span>
+                  </label>
+                  <div class="input-with-symbol">
+                    <span class="input-symbol">₹</span>
+                    <input type="number" id="desired-loan-amount" class="form-input" placeholder="e.g. 1500000" min="10000" max="100000000" required>
+                  </div>
+                  <span class="field-error" id="error-desired-loan-amount"></span>
+                </div>
+
+                <!-- Desired Loan Tenure -->
+                <div class="form-group">
+                  <label for="desired-tenure-years" class="form-label">
+                    Desired Loan Tenure (Years) <span class="required">*</span>
+                  </label>
+                  <input type="number" id="desired-tenure-years" class="form-input" placeholder="e.g. 5" min="1" max="30" required>
+                  <span class="field-error" id="error-desired-tenure-years"></span>
+                </div>
+
+                <!-- Approximate Credit Score -->
+                <div class="form-group">
+                  <label for="applicant-credit-score" class="form-label">
+                    Approximate Credit Score <span class="required">*</span>
+                  </label>
+                  <input type="number" id="applicant-credit-score" class="form-input" placeholder="e.g. 760" min="300" max="900" required>
+                  <span class="field-hint">Range: 300 to 900</span>
+                  <span class="field-error" id="error-applicant-credit-score"></span>
+                </div>
+              </div>
+
+              <!-- Form Buttons -->
+              <div class="form-actions-row">
+                <button type="submit" class="btn btn-primary btn-lg" id="submit-eligibility-btn">
+                  🔍 Calculate Eligibility
+                </button>
+                <button type="button" class="btn btn-ghost" id="reset-eligibility-btn">
+                  🔄 Reset Form
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Eligibility Result Card -->
+          <div class="glass-panel result-card" id="eligibility-result-panel">
+            <div class="result-placeholder" id="eligibility-placeholder">
+              <div class="placeholder-icon">📊</div>
+              <h3>Ready to Calculate</h3>
+              <p>Fill out the financial profile form or click <strong>“✨ Try Demo Data”</strong> to view your estimated loan eligibility, EMI capacity, and risk indicators.</p>
+            </div>
+
+            <!-- Dynamic Result Content (Hidden until calculated) -->
+            <div class="result-content hidden" id="eligibility-content">
+              <div class="result-header">
+                <div>
+                  <span class="badge-pill" id="result-status-badge">High Probability</span>
+                  <h3 class="result-title">Estimated Eligibility Summary</h3>
+                </div>
+                <!-- Circular Score Ring -->
+                <div class="eligibility-radial-meter" title="Eligibility Match Percentage">
+                  <svg viewBox="0 0 100 100" class="radial-svg">
+                    <circle cx="50" cy="50" r="42" class="radial-bg"></circle>
+                    <circle cx="50" cy="50" r="42" class="radial-fill" id="radial-progress-bar"></circle>
+                  </svg>
+                  <div class="radial-center-text">
+                    <span class="radial-pct" id="eligibility-pct-val">95%</span>
+                    <span class="radial-sub">Match</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Major Figures -->
+              <div class="result-figures-grid">
+                <div class="figure-box highlight-box">
+                  <span class="figure-label">Max Estimated Eligible Amount</span>
+                  <div class="figure-value" id="result-eligible-amount">₹18,24,000</div>
+                  <span class="figure-sub" id="result-desired-comparison">Requested: ₹15,00,000</span>
+                </div>
+
+                <div class="figure-box">
+                  <span class="figure-label">Estimated Monthly EMI</span>
+                  <div class="figure-value" id="result-estimated-emi">₹37,650<span class="per-month">/mo</span></div>
+                  <span class="figure-sub" id="result-tenure-summary">At ~8.75% for 5 Years</span>
+                </div>
+              </div>
+
+              <!-- Telemetry Metrics -->
+              <div class="result-telemetry-row">
+                <div class="telemetry-badge">
+                  <span class="tele-lbl">Debt-to-Income (DTI)</span>
+                  <strong class="tele-val" id="result-dti-val">32.5%</strong>
+                  <span class="tele-status text-green" id="result-dti-status">Healthy (Low Risk)</span>
+                </div>
+
+                <div class="telemetry-badge">
+                  <span class="tele-lbl">Credit Profile</span>
+                  <strong class="tele-val" id="result-credit-profile">Good</strong>
+                  <span class="tele-status text-blue" id="result-credit-score-val">Score: 760</span>
+                </div>
+
+                <div class="telemetry-badge">
+                  <span class="tele-lbl">Employment Stability</span>
+                  <strong class="tele-val" id="result-stability-val">Strong</strong>
+                  <span class="tele-status text-green" id="result-tenure-profile">4+ Yrs Salaried</span>
+                </div>
+              </div>
+
+              <!-- Explanation Narrative -->
+              <div class="result-explanation-box">
+                <h4 class="explanation-title">💡 Institutional Analysis</h4>
+                <p class="explanation-text" id="result-explanation-text">
+                  Your estimated eligibility is based on a transparent FOIR limit of 45%. With monthly disposable earnings of ₹60,000 after existing obligations, your profile demonstrates strong servicing capability.
+                </p>
+                <div class="disclaimer-mini">
+                  ⚠️ <strong>Disclaimer:</strong> This is a simulation for educational purposes. A real financial institution considers credit bureau history, employer categorization, physical verification, and internal underwriting guidelines.
+                </div>
+              </div>
+
+              <!-- Action Bar -->
+              <div class="result-actions-bar">
+                <button type="button" class="btn btn-primary" id="save-demo-app-btn">
+                  💾 Save Demo Summary
+                </button>
+                <button type="button" class="btn btn-outline" id="transfer-to-ai-btn">
+                  🤖 Ask AI About This Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TOOL 2: CREDIT SCORE ANALYZER -->
+    <!-- ============================================================== -->
+    <section class="section tool-section" id="credit-score">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tool 02</span>
+          <h2 class="section-title">Credit Score Analyzer</h2>
+          <p class="section-desc">Understand how lenders view your credit profile, test different score brackets, and learn the five foundational pillars of credit health.</p>
+        </div>
+
+        <div class="credit-analyzer-grid">
+          <!-- Left: Score Input & Interactive Gauge -->
+          <div class="glass-panel credit-gauge-card">
+            <h3 class="card-section-title">Interactive Credit Gauge</h3>
+            <p class="card-section-desc">Move the slider or click presets to simulate credit tier transitions.</p>
+
+            <!-- Score Gauge Graphic (SVG Arc Gauge) -->
+            <div class="gauge-wrapper">
+              <svg viewBox="0 0 300 170" class="credit-gauge-svg" id="credit-gauge-svg">
+                <defs>
+                  <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ef4444" />   <!-- Poor -->
+                    <stop offset="28%" stop-color="#f59e0b" />  <!-- Fair -->
+                    <stop offset="55%" stop-color="#3b82f6" />  <!-- Good -->
+                    <stop offset="78%" stop-color="#10b981" />  <!-- Very Good -->
+                    <stop offset="100%" stop-color="#06b6d4" /> <!-- Excellent -->
+                  </linearGradient>
+                </defs>
+                <!-- Gauge Background Track -->
+                <path d="M 30 150 A 120 120 0 0 1 270 150" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="20" stroke-linecap="round"/>
+                <!-- Gauge Active Colored Arc -->
+                <path d="M 30 150 A 120 120 0 0 1 270 150" fill="none" stroke="url(#gaugeGradient)" stroke-width="20" stroke-linecap="round"/>
+                <!-- Needle Center Hub -->
+                <circle cx="150" cy="150" r="10" fill="#ffffff" />
+                <!-- Needle Pointer -->
+                <line id="gauge-needle" x1="150" y1="150" x2="150" y2="45" stroke="#ffffff" stroke-width="4" stroke-linecap="round" style="transform-origin: 150px 150px; transform: rotate(-45deg); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);"/>
+              </svg>
+
+              <!-- Central Score Readout -->
+              <div class="gauge-score-display">
+                <span class="gauge-score-num" id="gauge-score-text">750</span>
+                <span class="badge-pill tier-badge" id="gauge-tier-badge">Very Good</span>
+              </div>
+            </div>
+
+            <!-- Score Input & Slider Controls -->
+            <div class="gauge-controls">
+              <div class="slider-header">
+                <label for="credit-score-slider" class="form-label">Simulate Credit Score (300 – 900)</label>
+                <div class="score-input-box">
+                  <input type="number" id="credit-score-number" class="score-number-input" min="300" max="900" value="750">
+                </div>
+              </div>
+              <input type="range" id="credit-score-slider" class="range-slider" min="300" max="900" value="750" step="1">
+
+              <!-- Quick Presets -->
+              <div class="preset-pills-row">
+                <button type="button" class="preset-pill" data-score="520">Poor (520)</button>
+                <button type="button" class="preset-pill" data-score="630">Fair (630)</button>
+                <button type="button" class="preset-pill" data-score="710">Good (710)</button>
+                <button type="button" class="preset-pill active" data-score="760">Very Good (760)</button>
+                <button type="button" class="preset-pill" data-score="840">Excellent (840)</button>
+              </div>
+            </div>
+
+            <!-- Tier Description Card -->
+            <div class="tier-explanation-box" id="tier-explanation-box">
+              <h4 class="tier-title" id="tier-title">Very Good Credit (740 – 799)</h4>
+              <p class="tier-desc" id="tier-desc">
+                Borrowers in this bracket enjoy fast approvals, lower interest rates, and higher loan limits. Maintain disciplined repayments to preserve this status.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: 5 Educational Factors Breakdown -->
+          <div class="glass-panel credit-factors-card">
+            <h3 class="card-section-title">5 Key Factors That Shape Credit Health</h3>
+            <p class="card-section-desc">Credit bureaus synthesize these institutional dimensions when computing your credit rating:</p>
+
+            <div class="factors-list">
+              <!-- Factor 1: Payment History -->
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">1. Payment History</span>
+                  <span class="factor-weight">35% Impact</span>
+                </div>
+                <div class="factor-bar">
+                  <div class="factor-fill" style="width: 100%; background: #10b981;"></div>
+                </div>
+                <p class="factor-text">The single largest factor. Track record of on-time loan EMIs and credit card bill payments.</p>
+              </div>
+
+              <!-- Factor 2: Credit Utilization -->
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">2. Credit Utilization Ratio</span>
+                  <span class="factor-weight">30% Impact</span>
+                </div>
+                <div class="factor-bar">
+                  <div class="factor-fill" style="width: 85%; background: #3b82f6;"></div>
+                </div>
+                <p class="factor-text">The portion of available revolving credit you spend. Best practice is keeping utilization below 30%.</p>
+              </div>
+
+              <!-- Factor 3: Length of Credit History -->
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">3. Length of Credit History</span>
+                  <span class="factor-weight">15% Impact</span>
+                </div>
+                <div class="factor-bar">
+                  <div class="factor-fill" style="width: 45%; background: #8b5cf6;"></div>
+                </div>
+                <p class="factor-text">Average age of all open credit accounts. Older accounts demonstrate seasoned borrowing responsibility.</p>
+              </div>
+
+              <!-- Factor 4: Credit Mix -->
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">4. Credit Mix (Secured vs Unsecured)</span>
+                  <span class="factor-weight">10% Impact</span>
+                </div>
+                <div class="factor-bar">
+                  <div class="factor-fill" style="width: 30%; background: #f59e0b;"></div>
+                </div>
+                <p class="factor-text">Healthy balance of secured credit (home, car loans) and unsecured credit (credit cards, personal loans).</p>
+              </div>
+
+              <!-- Factor 5: New Credit Inquiries -->
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">5. New Credit Inquiries</span>
+                  <span class="factor-weight">10% Impact</span>
+                </div>
+                <div class="factor-bar">
+                  <div class="factor-fill" style="width: 30%; background: #06b6d4;"></div>
+                </div>
+                <p class="factor-text">Hard inquiries made by lenders when you apply for credit. Avoid applying for multiple cards or loans simultaneously.</p>
+              </div>
+            </div>
+
+            <div class="credit-disclaimer-box">
+              ℹ️ <strong>Educational Note:</strong> Scoring algorithms differ slightly between credit bureaus (such as CIBIL, Experian, Equifax, CRIF High Mark, and FICO). This gauge illustrates standard benchmark tiers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TOOL 3: EMI CALCULATOR -->
+    <!-- ============================================================== -->
+    <section class="section tool-section" id="emi-calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tool 03</span>
+          <h2 class="section-title">Interactive EMI Calculator</h2>
+          <p class="section-desc">Compute exact monthly installment obligations, total interest costs, and visualize principal versus interest amortized repayment schedules.</p>
+        </div>
+
+        <div class="emi-layout-grid">
+          <!-- Inputs Column -->
+          <div class="glass-panel emi-inputs-card">
+            <div class="form-header-bar">
+              <h3 class="form-title">Loan Parameters</h3>
+              <button type="button" class="btn btn-sm btn-ghost" id="reset-emi-btn">🔄 Reset</button>
+            </div>
+
+            <!-- Input 1: Loan Amount -->
+            <div class="slider-control-group">
+              <div class="control-header">
+                <label for="emi-amount-input" class="control-label">Principal Loan Amount</label>
+                <div class="control-value-badge">
+                  <span>₹</span>
+                  <input type="number" id="emi-amount-input" class="control-num-field" min="10000" max="20000000" value="1000000" step="10000">
+                </div>
+              </div>
+              <input type="range" id="emi-amount-slider" class="range-slider" min="50000" max="10000000" value="1000000" step="50000">
+              
+              <!-- Quick Chips -->
+              <div class="quick-chip-row">
+                <button type="button" class="quick-chip" data-amount="500000">₹5 Lakh</button>
+                <button type="button" class="quick-chip active" data-amount="1000000">₹10 Lakh</button>
+                <button type="button" class="quick-chip" data-amount="2500000">₹25 Lakh</button>
+                <button type="button" class="quick-chip" data-amount="5000000">₹50 Lakh</button>
+              </div>
+            </div>
+
+            <!-- Input 2: Interest Rate -->
+            <div class="slider-control-group">
+              <div class="control-header">
+                <label for="emi-rate-input" class="control-label">Annual Interest Rate (% p.a.)</label>
+                <div class="control-value-badge">
+                  <input type="number" id="emi-rate-input" class="control-num-field" min="1" max="30" value="8.5" step="0.1">
+                  <span>%</span>
+                </div>
+              </div>
+              <input type="range" id="emi-rate-slider" class="range-slider" min="5" max="20" value="8.5" step="0.25">
+              
+              <!-- Quick Chips -->
+              <div class="quick-chip-row">
+                <button type="button" class="quick-chip" data-rate="7.5">7.5% (Home)</button>
+                <button type="button" class="quick-chip active" data-rate="8.5">8.5% (Prime)</button>
+                <button type="button" class="quick-chip" data-rate="10.5">10.5% (Auto)</button>
+                <button type="button" class="quick-chip" data-rate="12.5">12.5% (Personal)</button>
+              </div>
+            </div>
+
+            <!-- Input 3: Tenure -->
+            <div class="slider-control-group">
+              <div class="control-header">
+                <div class="tenure-label-row">
+                  <label for="emi-tenure-input" class="control-label">Loan Tenure</label>
+                  <div class="tenure-toggle-group">
+                    <button type="button" class="tenure-toggle-btn active" id="tenure-years-btn">Years</button>
+                    <button type="button" class="tenure-toggle-btn" id="tenure-months-btn">Months</button>
+                  </div>
+                </div>
+                <div class="control-value-badge">
+                  <input type="number" id="emi-tenure-input" class="control-num-field" min="1" max="30" value="5">
+                  <span id="tenure-unit-label">Yr</span>
+                </div>
+              </div>
+              <input type="range" id="emi-tenure-slider" class="range-slider" min="1" max="30" value="5" step="1">
+            </div>
+
+            <!-- Formula Box -->
+            <div class="formula-box">
+              <span class="formula-title">Standard Amortization Formula:</span>
+              <code>EMI = [P × r × (1+r)ⁿ] / [(1+r)ⁿ - 1]</code>
+            </div>
+          </div>
+
+          <!-- Outputs & Chart Column -->
+          <div class="glass-panel emi-outputs-card">
+            <!-- Large Monthly EMI Box -->
+            <div class="monthly-emi-banner">
+              <span class="emi-banner-subtitle">Estimated Monthly Repayment (EMI)</span>
+              <div class="emi-banner-amount">
+                <span class="curr-sign">₹</span>
+                <span id="display-monthly-emi">20,517</span>
+              </div>
+            </div>
+
+            <!-- Metrics Summary Grid -->
+            <div class="emi-breakdown-metrics">
+              <div class="breakdown-stat">
+                <span class="breakdown-lbl">Principal Amount</span>
+                <strong class="breakdown-val" id="display-principal-amt">₹10,00,000</strong>
+              </div>
+              <div class="breakdown-stat">
+                <span class="breakdown-lbl">Total Interest Payable</span>
+                <strong class="breakdown-val text-accent" id="display-total-interest">₹2,31,020</strong>
+              </div>
+              <div class="breakdown-stat total-stat">
+                <span class="breakdown-lbl">Total Repayment (P + I)</span>
+                <strong class="breakdown-val" id="display-total-repayment">₹12,31,020</strong>
+              </div>
+            </div>
+
+            <!-- Donut Visual Breakdown Chart -->
+            <div class="chart-section">
+              <div class="donut-chart-container">
+                <svg viewBox="0 0 160 160" class="donut-chart-svg">
+                  <!-- Background Circle -->
+                  <circle cx="80" cy="80" r="60" fill="transparent" stroke="rgba(255, 255, 255, 0.05)" stroke-width="24"/>
+                  <!-- Principal Stroke (Cyan) -->
+                  <circle id="donut-principal-ring" cx="80" cy="80" r="60" fill="transparent" stroke="#3b82f6" stroke-width="24" stroke-dasharray="376.99" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+                  <!-- Interest Stroke (Violet/Amber) -->
+                  <circle id="donut-interest-ring" cx="80" cy="80" r="60" fill="transparent" stroke="#f59e0b" stroke-width="24" stroke-dasharray="376.99" stroke-dashoffset="94" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+                </svg>
+                <div class="donut-center-legend">
+                  <span class="donut-center-val" id="donut-interest-pct">18.8%</span>
+                  <span class="donut-center-lbl">Interest</span>
+                </div>
+              </div>
+
+              <!-- Legends -->
+              <div class="chart-legend-box">
+                <div class="legend-row">
+                  <span class="legend-dot dot-principal"></span>
+                  <span class="legend-name">Principal Amount:</span>
+                  <strong class="legend-pct" id="legend-principal-pct">81.2%</strong>
+                </div>
+                <div class="legend-row">
+                  <span class="legend-dot dot-interest"></span>
+                  <span class="legend-name">Total Interest:</span>
+                  <strong class="legend-pct" id="legend-interest-pct">18.8%</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Toggle Amortization Schedule -->
+            <button type="button" class="btn btn-outline btn-block" id="toggle-schedule-btn">
+              📅 View Yearly Amortization Schedule
+            </button>
+          </div>
+        </div>
+
+        <!-- Collapsible Amortization Table -->
+        <div class="glass-panel amortization-table-wrapper hidden" id="amortization-table-wrapper">
+          <div class="table-header-row">
+            <h4 class="table-title">Loan Amortization Schedule (Yearly Breakdown)</h4>
+            <button type="button" class="btn btn-sm btn-ghost" id="close-schedule-btn">Close ✕</button>
+          </div>
+          <div class="table-scroll-container">
+            <table class="amortization-table" id="amortization-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Opening Balance</th>
+                  <th>EMI Paid (Annual)</th>
+                  <th>Principal Paid</th>
+                  <th>Interest Paid</th>
+                  <th>Closing Balance</th>
+                </tr>
+              </thead>
+              <tbody id="amortization-tbody">
+                <!-- Dynamically generated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TOOL 4: AI FINANCIAL TIPS (CLAUDE POWERED) -->
+    <!-- ============================================================== -->
+    <section class="section tool-section" id="ai-tips">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tool 04</span>
+          <h2 class="section-title">AI Financial Tips & Planning</h2>
+          <p class="section-desc">Receive clear, beginner-friendly financial guidance powered by Claude. Select a topic or submit a question for personalized insights.</p>
+        </div>
+
+        <div class="ai-tips-grid">
+          <!-- Left: Topic Selection & Input Form -->
+          <div class="glass-panel ai-input-card">
+            <div class="form-header-bar">
+              <h3 class="form-title">Consult AI Financial Advisor</h3>
+              <span class="badge-pill claude-pill">
+                <span class="claude-sparkle">✨</span> Claude API Integration
+              </span>
+            </div>
+
+            <!-- Topic Selector Pills -->
+            <div class="topic-section">
+              <label class="form-label">Select Financial Topic <span class="required">*</span></label>
+              <div class="topic-pills-grid" id="topic-pills-container">
+                <button type="button" class="topic-pill active" data-topic="Saving Money">💰 Saving Money</button>
+                <button type="button" class="topic-pill" data-topic="Managing Debt">💳 Managing Debt</button>
+                <button type="button" class="topic-pill" data-topic="Improving Credit Score">📈 Improving Credit Score</button>
+                <button type="button" class="topic-pill" data-topic="Loan Planning">🏠 Loan Planning</button>
+                <button type="button" class="topic-pill" data-topic="Emergency Fund">🛡️ Emergency Fund</button>
+                <button type="button" class="topic-pill" data-topic="Budgeting">📝 Budgeting</button>
+                <button type="button" class="topic-pill" data-topic="Financial Planning">🎯 Financial Planning</button>
+              </div>
+            </div>
+
+            <!-- Quick Inquiry Suggestions -->
+            <div class="suggestions-section">
+              <span class="suggestions-label">Try asking:</span>
+              <div class="suggestions-chips-row">
+                <button type="button" class="chip-suggestion" data-prompt="How can I lower my Debt-to-Income (DTI) ratio before applying for a loan?">
+                  How can I lower my DTI ratio?
+                </button>
+                <button type="button" class="chip-suggestion" data-prompt="What is the fastest way to improve a credit score from 650 to 750?">
+                  Fastest way to get credit score to 750?
+                </button>
+                <button type="button" class="chip-suggestion" data-prompt="How many months of emergency fund is recommended for salaried vs self-employed?">
+                  Emergency fund size for salaried vs self-employed?
+                </button>
+              </div>
+            </div>
+
+            <!-- Custom Question Input -->
+            <div class="form-group">
+              <label for="ai-question-input" class="form-label">
+                Optional: Enter a Specific Financial Question
+              </label>
+              <textarea id="ai-question-input" class="form-textarea" rows="3" placeholder="e.g. Should I prepay my personal loan or invest in an index fund first?"></textarea>
+            </div>
+
+            <!-- Context Checkbox -->
+            <div class="checkbox-group">
+              <input type="checkbox" id="include-profile-context" checked>
+              <label for="include-profile-context">
+                Include my calculated loan eligibility profile (Income, DTI, Credit Score) for tailored context
+              </label>
+            </div>
+
+            <!-- Generate Button -->
+            <button type="button" class="btn btn-primary btn-block btn-lg" id="generate-ai-tips-btn">
+              <span class="btn-spinner hidden" id="ai-spinner"></span>
+              <span id="ai-btn-text">✨ Generate Financial Tips</span>
+            </button>
+          </div>
+
+          <!-- Right: AI Advice Output Card -->
+          <div class="glass-panel ai-output-card" id="ai-output-panel">
+            <div class="ai-output-header">
+              <div class="ai-source-badge-row">
+                <span class="source-tag" id="ai-source-tag">Source: Ready to Generate</span>
+                <span class="ai-timestamp" id="ai-timestamp"></span>
+              </div>
+              <button type="button" class="btn btn-sm btn-ghost" id="copy-ai-tips-btn" title="Copy response to clipboard">
+                📋 Copy Tips
+              </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="ai-content-body" id="ai-content-body">
+              <div class="ai-placeholder-view" id="ai-placeholder-view">
+                <div class="ai-spark-orb">✨</div>
+                <h4>Your Personalized Advice Will Appear Here</h4>
+                <p>Select any topic above and click <strong>“Generate Financial Tips”</strong>. You'll receive structured, institutional-grade financial guidance tailored to your profile.</p>
+              </div>
+
+              <div class="ai-markdown-rendered hidden" id="ai-markdown-rendered">
+                <!-- Dynamically rendered markdown -->
+              </div>
+            </div>
+
+            <!-- AI Disclaimer -->
+            <div class="ai-disclaimer-card">
+              <span class="ai-disclaimer-icon">ℹ️</span>
+              <p class="ai-disclaimer-text" id="ai-disclaimer-text">
+                AI-generated information is for educational purposes and is not a substitute for professional financial advice. Always consult a qualified financial advisor before making borrowing decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: SAVED DEMO APPLICATIONS VIEWER -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay hidden" id="records-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="glass-panel modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Saved Demo Eligibility Records</h3>
+        <button type="button" class="modal-close-btn" id="close-modal-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-sub">
+          These safe non-sensitive demo records reflect recent session eligibility evaluations saved to the backend (or local session memory).
+        </p>
+        <div class="modal-table-container">
+          <table class="records-table">
+            <thead>
+              <tr>
+                <th>Ref ID</th>
+                <th>Alias</th>
+                <th>Income</th>
+                <th>Requested</th>
+                <th>Eligible Amt</th>
+                <th>Est. EMI</th>
+                <th>DTI %</th>
+              </tr>
+            </thead>
+            <tbody id="records-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" id="close-modal-footer-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- FOOTER -->
+  <!-- ============================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <img src="assets/logo.svg" alt="FinEdge AI Logo" width="32" height="32">
+          <span class="footer-brand-name">AI Loan Eligibility Checker</span>
+        </div>
+        <p class="footer-desc">
+          An institutional-style BFSI personal finance platform designed for educational analysis, credit health awareness, and transparent loan planning.
+        </p>
+        <div class="privacy-promise-badge">
+          🛡️ Zero Sensitive Data Storage: No passwords, bank credentials, card numbers, OTPs, or government IDs.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Platform Tools</h4>
+        <ul class="footer-links">
+          <li><a href="#loan-eligibility">Loan Eligibility Checker</a></li>
+          <li><a href="#credit-score">Credit Score Analyzer</a></li>
+          <li><a href="#emi-calculator">Interactive EMI Calculator</a></li>
+          <li><a href="#ai-tips">AI Financial Tips & Planning</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Architecture & Stack</h4>
+        <ul class="footer-links">
+          <li><span>Frontend: HTML5, CSS3, Vanilla ES6+</span></li>
+          <li><span>Backend: Python Flask REST API</span></li>
+          <li><span>AI Model: Claude 3.5 Sonnet / Knowledge Fallback</span></li>
+          <li><span>Data Storage: Google Sheets / Local JSON</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">GitHub Project</h4>
+        <p class="footer-text">Production-ready, clean separation of concerns, beginner-friendly viva presentation.</p>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline github-link-btn">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copyright-text">
+        © 2026 AI Loan Eligibility Checker. Built for academic and BFSI educational demonstration.
+      </p>
+      <div class="footer-legal-note">
+        All calculations are educational simulations and do not represent formal lending commitments.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

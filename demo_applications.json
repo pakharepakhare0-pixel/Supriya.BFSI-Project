@@ -1,0 +1,19 @@
+[
+  {
+    "reference_id": "APP-20260924-1042",
+    "submission_time": "2026-09-24 10:15:00",
+    "applicant_alias": "Fictional Demo User",
+    "age": 29,
+    "employment_type": "Salaried",
+    "monthly_income": 85000.0,
+    "monthly_expenses": 25000.0,
+    "existing_monthly_emi": 8000.0,
+    "desired_loan_amount": 1500000.0,
+    "desired_tenure_years": 5.0,
+    "credit_score": 760,
+    "estimated_eligible_amount": 1824000.0,
+    "estimated_emi": 37650.0,
+    "debt_to_income_pct": 32.5,
+    "risk_profile": "Low Risk (Healthy Profile)"
+  }
+]

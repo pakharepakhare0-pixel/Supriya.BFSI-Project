@@ -1,0 +1,12 @@
+# Flask Web Framework & Extensions
+Flask>=2.3.0
+Flask-Cors>=4.0.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Anthropic Claude SDK (Optional, requests is also used as a universal direct fallback)
+anthropic>=0.25.0
+
+# Google Sheets Integration (Optional)
+gspread>=5.10.0
+google-auth>=2.20.0
